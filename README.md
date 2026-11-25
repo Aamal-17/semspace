@@ -6,6 +6,7 @@
 
 ## Figma Design & Interactive Prototype
 - **Figma Prototype Link:** [View Interactive Prototype](https://www.figma.com/proto/1GKEw6LsKMKAyZvmiCDWIH/Untitled?node-id=35-8&p=f&t=bux7nTDWesrGyjUR-1&scaling=min-zoom&content-scaling=fixed&page-id=32%3A39&starting-point-node-id=35%3A2)
+- - **Live Website:** [View Live SemSpace App](https://aamal-17.github.io/semspace/)
 - **Design Process:** Low-fidelity wireframes, high-fidelity UI screens, and interactive screen-to-screen prototype navigation across 3 core views.
 
 ---
