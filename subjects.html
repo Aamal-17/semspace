@@ -158,7 +158,7 @@
                                     <th class="border-0 py-2 pe-3 fw-normal">Delete</th>
                                 </tr>
                             </thead>
-                            <tbody id="taskTableBody">
+                            <tbody>
                                 <tr>
                                     <td class="py-3 ps-3"><input type="checkbox" style="accent-color: #ec407a;"></td>
                                     <td class="py-3 fw-semibold">Lab 04: Loops &amp; arrays</td>
@@ -166,7 +166,7 @@
                                     <td class="py-3"><span class="badge px-2 py-1" style="background-color: #fce4ec; color: #d81b60;">High</span></td>
                                     <td class="py-3"><span class="badge px-2 py-1" style="background-color: #fce4ec; color: #d81b60;">In progress</span></td>
                                     <td class="py-3 pe-3">
-                                        <button class="btn btn-sm border-0 px-2 py-1 fw-semibold" style="background-color: #fce4ec; color: #d81b60;" onclick="deleteDefaultRow(this)">Delete</button>
+                                        <button type="button" class="btn btn-sm border-0 px-2 py-1 fw-semibold" style="background-color: #fce4ec; color: #d81b60;">Delete</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -176,7 +176,7 @@
                                     <td class="py-3"><span class="badge px-2 py-1" style="background-color: #fff3cd; color: #856404;">Medium</span></td>
                                     <td class="py-3"><span class="badge px-2 py-1" style="background-color: #f1f3f5; color: #6c757d;">To do</span></td>
                                     <td class="py-3 pe-3">
-                                        <button class="btn btn-sm border-0 px-2 py-1 fw-semibold" style="background-color: #fce4ec; color: #d81b60;" onclick="deleteDefaultRow(this)">Delete</button>
+                                        <button type="button" class="btn btn-sm border-0 px-2 py-1 fw-semibold" style="background-color: #fce4ec; color: #d81b60;">Delete</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -186,7 +186,7 @@
                                     <td class="py-3"><span class="badge px-2 py-1" style="background-color: #fff3cd; color: #856404;">Medium</span></td>
                                     <td class="py-3"><span class="badge px-2 py-1" style="background-color: #f1f3f5; color: #6c757d;">To do</span></td>
                                     <td class="py-3 pe-3">
-                                        <button class="btn btn-sm border-0 px-2 py-1 fw-semibold" style="background-color: #fce4ec; color: #d81b60;" onclick="deleteDefaultRow(this)">Delete</button>
+                                        <button type="button" class="btn btn-sm border-0 px-2 py-1 fw-semibold" style="background-color: #fce4ec; color: #d81b60;">Delete</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -196,7 +196,7 @@
                                     <td class="py-3"><span class="badge px-2 py-1" style="background-color: #f1f3f5; color: #6c757d;">Low</span></td>
                                     <td class="py-3"><span class="badge px-2 py-1" style="background-color: #d1e7dd; color: #0f5132;">Done</span></td>
                                     <td class="py-3 pe-3">
-                                        <button class="btn btn-sm border-0 px-2 py-1 fw-semibold" style="background-color: #fce4ec; color: #d81b60;" onclick="deleteDefaultRow(this)">Delete</button>
+                                        <button type="button" class="btn btn-sm border-0 px-2 py-1 fw-semibold" style="background-color: #fce4ec; color: #d81b60;">Delete</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -246,35 +246,6 @@ Revise array indexing before starting Lab 04.</textarea>
         </div>
 
     </div>
-
-    <!-- JavaScript to Load and Delete Tasks -->
-    <script>
-        var tasks = JSON.parse(localStorage.getItem("myTasks")) || [];
-        var tableBody = document.getElementById("taskTableBody");
-
-        for (var i = 0; i < tasks.length; i++) {
-            var row = "<tr>" +
-                "<td class='py-3 ps-3'><input type='checkbox' style='accent-color: #ec407a;'></td>" +
-                "<td class='py-3 fw-semibold'>" + tasks[i].title + "</td>" +
-                "<td class='py-3 text-muted'>" + tasks[i].date + "</td>" +
-                "<td class='py-3'><span class='badge px-2 py-1' style='background-color: #fce4ec; color: #d81b60;'>" + tasks[i].priority + "</span></td>" +
-                "<td class='py-3'><span class='badge px-2 py-1' style='background-color: #f1f3f5; color: #6c757d;'>To do</span></td>" +
-                "<td class='py-3 pe-3'><button class='btn btn-sm border-0 px-2 py-1 fw-semibold' style='background-color: #fce4ec; color: #d81b60;' onclick='deleteSavedTask(" + i + ")'>Delete</button></td>" +
-                "</tr>";
-            tableBody.innerHTML += row;
-        }
-
-        function deleteDefaultRow(button) {
-            var row = button.parentElement.parentElement;
-            row.remove();
-        }
-
-        function deleteSavedTask(index) {
-            tasks.splice(index, 1);
-            localStorage.setItem("myTasks", JSON.stringify(tasks));
-            location.reload();
-        }
-    </script>
 
 </body>
 </html>
